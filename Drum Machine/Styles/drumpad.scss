@@ -1,18 +1,11 @@
 
-.drumpad {
-  display: flex;
-  align-items: center;
-}
-
-.pads-container {
-  width: 750px;
-  height: 300px;
+.pad-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  gap: 10px;
 }
-
-
-.pad-row {
+.row {
   display: flex;
 }
+
+

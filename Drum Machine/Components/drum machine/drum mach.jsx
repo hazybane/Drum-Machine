@@ -1,9 +1,9 @@
 import React from "react";
 import '/Drum Machine/Styles/Drumfull.scss'
-import {Soundsnames} from "./sounds.jsx";
 import {Header} from "./header.jsx";
 import {Steps} from "./stepsequence.jsx";
 import {MainPart} from "./main-part.jsx";
+
 
 const Drumfull = () => {
     return (
