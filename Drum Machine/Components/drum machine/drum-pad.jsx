@@ -21,6 +21,7 @@ const DrumPad = ({ samples, numSteps = 16 }) => {
     const stepIds = arrayIds;
 
 
+
     const handlePlayClick = async () => {
         if (Tone.Transport.state === "started") {
             Tone.Transport.pause();

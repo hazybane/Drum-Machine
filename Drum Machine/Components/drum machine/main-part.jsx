@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import {Soundsnames} from "./sounds.jsx";
 import {DrumPad} from "./drum-pad.jsx";
 import '/Drum Machine/Styles/main-part.scss'
-import {audioSamples} from "../samples.jsx";
+import{audioSamples} from "../../../public/Sounds/samples.jsx";
 
 const MainPart = () => {
     const [resetKey, setResetKey] = useState(0);
