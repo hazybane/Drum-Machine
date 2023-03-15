@@ -5,10 +5,10 @@
 
 
 const audioSamples = [
-    { url: "/public/Sounds/kick.wav"},
-    { url: "/public/Sounds/snare.wav"},
-    { url: "/public/Sounds/open-hat.wav"},
-    { url: "/public/Sounds/hi-hat.wav"},
+    { url: "C:\\Users\\юзер\\Drum-Machine\\public\\Sounds\\kick.wav"},
+    { url: "C:\\Users\\юзер\\Drum-Machine\\public\\Sounds\\snare.wav"},
+    { url: "/C:\\Users\\юзер\\Drum-Machine\\public\\Sounds\\open-hat.wav"},
+    { url: "C:\\Users\\юзер\\Drum-Machine\\public\\Sounds\\hi-hat.wav"},
 ]
 
 export {audioSamples}
