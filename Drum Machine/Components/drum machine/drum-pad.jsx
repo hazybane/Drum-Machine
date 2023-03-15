@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as Tone from "tone";
-
 import "/Drum Machine/Styles/drumpad.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay, faStop } from '@fortawesome/free-solid-svg-icons'
+
+
 
 const note = ["C2", "D2", "E2", "F2",];
 
@@ -27,7 +30,6 @@ const DrumPad = ({ samples, numSteps = 16 }) => {
             setIsPlaying(true);
         }
     };
-
     const handleBpmChange = (e) => {
         Tone.Transport.bpm.value = Number(e.target.value);
     };
@@ -70,14 +72,31 @@ const DrumPad = ({ samples, numSteps = 16 }) => {
     return (
         <div className={"container"}>
             <div className={"pad-container"}>
+                <div className={'line'}>
+                    {stepIds.map((stepId) => (
+                        <label className={'step'} >
+                            <input
+                                type="radio"
+                                name="icon"
+                                id={"icon" + "-" + stepId}
+                                disabled
+                                ref={(elm) => {
+                                    if (!elm) return;
+                                    iconsRef.current[stepId] = elm;
+                                }}
+                                className={'step-input'}
+                            />
+                            <div className={'step-content'} />
+                        </label>
+                    ))}
+                </div>
                 {trackIds.map((track, trackId) => (
-                    <div key={trackId} className={'row'}>
+                    <div key={trackId} className={'rows'}>
                         {stepIds.map((step, stepId) => {
                             const id = `step ${trackId}, ${stepId}`;
-
                             return (
-                                <label key={`${trackId}-${stepId}`}>
-                                    <input
+                                <label key={`${trackId}-${stepId}`} className={'row'}>
+                                    <input className={'pad-square'}
                                         key={id}
                                         id={id}
                                         type="checkbox"
@@ -88,23 +107,22 @@ const DrumPad = ({ samples, numSteps = 16 }) => {
                                             }
                                             stepsRef.current[trackId][stepId] = element;
                                         }}
-
                                         defaultChecked={false}
                                     />
-                                    <div/>
                                 </label>
                             );
                         })}
                     </div>
                 ))}
             </div>
-            <div>
-                <button onClick={handlePlayClick} className={'button'}>
-                    {isPlaying ? "Pause" : "Play"}
+            <div className={'buttons-all'}>
+                <button onClick={handlePlayClick} className={'play'}>
+                    {isPlaying ? <FontAwesomeIcon icon={faStop} /> : <FontAwesomeIcon icon={faPlay} />}
                 </button>
-                <label>
+                <label className={"bpm-label"}>
                     <span>BPM</span>
                     <input
+                        className={'bpm-input'}
                         type="range"
                         min={30}
                         max={150}
@@ -113,15 +131,15 @@ const DrumPad = ({ samples, numSteps = 16 }) => {
                         defaultValue={60}
                     />
                 </label>
-                <label>
+                <label className={"volume-label"}>
                     <span>Volume</span>
-                    <input
+                    <input className={'volume-input'}
                         type="range"
                         min={0}
-                        max={1}
+                        max={0.5}
                         step={0.01}
                         onChange={handleVolumeChange}
-                        defaultValue={1}
+                        defaultValue={0.25}
                     />
                 </label>
             </div>

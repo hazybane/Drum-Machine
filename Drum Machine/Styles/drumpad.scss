@@ -1,11 +1,163 @@
 
-.pad-container {
+
+.container {
+  height: 370px;
+  width: 750px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+
+.pad-container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
   flex-direction: column;
-  gap: 10px;
+  padding-left: 35px;
+}
+.rows {
+  display: flex;
 }
 .row {
+  &:nth-child(-n+4),
+  &:nth-child(n+9):nth-child(-n+12) {
+    .pad-square::before {
+      background-color: lightgrey;
+    }
+  }
+
+  &:nth-child(n+5):nth-child(-n+8),
+  &:nth-child(n+13):nth-child(-n+16) {
+    .pad-square::before {
+      background-color: grey;
+    }
+  }
+}
+
+.pad-square {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 10px;
+}
+
+.pad-square::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+$row-count: 16;
+$cells-per-row: 4;
+
+// loop through the rows and style the cells
+@for $i from 1 through $row-count {
+
+  // style the cells in the current row
+  .row:nth-child(#{$i}) .pad-square {
+    &::before {
+      background-color: lightgrey;
+    }
+    &:checked::before {
+      background-color: mediumpurple;
+    }
+  }
+}
+
+.buttons-all {
+  width: 675px;
+  position: absolute;
+  top: 26px;
+  color: white;
   display: flex;
+
+  .bpm-label {
+   margin-left: 70px;
+    margin-top: 5px;
+  }
+
+  .volume-label {
+    margin-left: 70px;
+    margin-top: 5px;
+  }
+  .play {
+
+    width: 50px;
+    height: 30px;
+    background-color: #A167A5;
+    color: white;
+    font-size: 14px;
+  }
+  span {
+    padding-right: 10px;
+    padding-left: 10px;
+    border: 3px black;
+    font-size: 16px;
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 7px;
+    background-color: purple;
+    border-radius: 5px;
+
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: pink;
+    }
+  }
+
+}
+
+
+
+
+.line {
+  display: flex;
+  width: 665px;
+  position: absolute;
+  top: 95px;
+  left: 288px;
+  background-color: white;
+}
+
+
+.step {
+margin-right: 7px;
+  .step-input {
+    border: 0;
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    width: 1px;
+    position: absolute;
+
+    &:checked + .step-content {
+      background-color: purple;
+    }
+  }
+
+  .step-content {
+    width: 35px;
+    height: 20px;
+  }
 }
 
 

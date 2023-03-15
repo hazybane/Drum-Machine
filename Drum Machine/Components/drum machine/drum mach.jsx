@@ -5,6 +5,7 @@ import {Steps} from "./stepsequence.jsx";
 import {MainPart} from "./main-part.jsx";
 
 
+
 const Drumfull = () => {
     return (
         <div className={'drumfull'}>
