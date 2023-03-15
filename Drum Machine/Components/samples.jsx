@@ -3,10 +3,10 @@ import React from 'react';
 
 
 const audioSamples = [
-        { url: "/Drum Machine/Assets/Sounds/kick.wav"},
-{ url: "/Drum Machine/Assets/Sounds/snare.wav"},
-{ url: "/Drum Machine/Assets/Sounds/open-hat.wav"},
-{ url: "/Drum Machine/Assets/Sounds/hi-hat.wav"},
+    { url: "/public/Sounds/kick.wav"},
+{ url: "/public/Sounds/snare.wav"},
+{ url: "/public/Sounds/open-hat.wav"},
+{ url: "/public/Sounds/hi-hat.wav"},
 ]
 
 export {audioSamples}

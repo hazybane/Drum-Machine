@@ -20,6 +20,7 @@ const DrumPad = ({ samples, numSteps = 16 }) => {
     const trackIds = arraytracks;
     const stepIds = arrayIds;
 
+
     const handlePlayClick = async () => {
         if (Tone.Transport.state === "started") {
             Tone.Transport.pause();
@@ -74,7 +75,7 @@ const DrumPad = ({ samples, numSteps = 16 }) => {
             <div className={"pad-container"}>
                 <div className={'line'}>
                     {stepIds.map((stepId) => (
-                        <label className={'step'} >
+                        <label className={'step'}>
                             <input
                                 type="radio"
                                 name="icon"
