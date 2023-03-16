@@ -4,10 +4,10 @@ import {DrumPad} from "./drum-pad.jsx";
 import '/Drum Machine/Styles/main-part.scss'
 
 const audioSamples = [
-    { url: "/Drum Machine/Assets/Sounds/kick.wav"},
-    { url: "/Drum Machine/Assets/Sounds/snare.wav"},
-    { url: "/Drum Machine/Assets/Sounds/open-hat.wav"},
-    { url: "/Drum Machine/Assets/Sounds/hi-hat.wav"},
+    { url: "/dist/assets/kick.wav"},
+    { url: "/dist/assets/snare.wav"},
+    { url: "/dist/assets/open-hat.wav"},
+    { url: "/dist/assets/hi-hat.wav"},
 ]
 
 
