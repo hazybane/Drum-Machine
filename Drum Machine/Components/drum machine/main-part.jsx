@@ -2,6 +2,10 @@ import React, { useState} from 'react';
 import {Soundsnames} from "./sounds.jsx";
 import {DrumPad} from "./drum-pad.jsx";
 import '/Drum Machine/Styles/main-part.scss'
+import '/Drum Machine/Sounds/kick.wav'
+import '/Drum Machine/Sounds/snare.wav'
+import '/Drum Machine/Sounds/open-hat.wav'
+import '/Drum Machine/Sounds/hi-hat.wav'
 
 const audioSamples = [
     { url: "/Drum%20Machine/Sounds/kick.wav"},
