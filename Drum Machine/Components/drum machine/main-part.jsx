@@ -10,10 +10,10 @@ import '/Drum Machine/Sounds/hi-hat.wav'
 
 
 const audioSamples = [
-    { url: "/dist/assets/kick-127089a6.wav"},
-    { url: "/dist/assets/snare-7cc8f4af.wav"},
-    { url: "/dist/assets/open-hat-67e25bf7.wav"},
-    { url: "/dist/assets/hi-hat-3c0172c1.wav"},
+    { url: "/Drum Machine/Sounds/kick.wav"},
+    { url: "/Drum Machine/Sounds/snare.wav"},
+    { url: "/Drum Machine/Sounds/open-hat.wav"},
+    { url: "/Drum Machine/Sounds/hi-hat.wav"},
 ]
 
 
